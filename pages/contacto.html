@@ -6,41 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto - Mi Sitio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../utilidades/menu.js" defer></script>
 </head>
 
-<body class="min-h-screen flex flex-col overflow-hidden h-screen items-center font-sans-serif bg-orange-100">
-    <nav class="bg-blue-950 text-white w-full">
-        <ul class="flex justify-center space-x-4 p-4">
+<body class="min-h-screen flex flex-col overflow-hidden h-screen font-sans-serif bg-orange-100">
+    <nav class="bg-blue-950 text-white relative">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <a href="../index.html" class="flex items-center">
+                <img src="../fotos/uade.svg" class="w-24 filter brightness-0 invert" alt="Logo de UADE" />
+            </a>
+            <ul class="hidden md:flex md:space-x-6">
+                <li><a href="../index.html" class="hover:underline">Home</a></li>
+                <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
+                <li><a href="sobremi.html" class="hover:underline">Sobre mí</a></li>
+                <li><a href="materias2025.html" class="hover:underline">Materias 2025</a></li>
+                <li><a href="contacto.html" class="underline font-semibold">Contacto</a></li>
+            </ul>
+            <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                <div class="space-y-1">
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                    <span class="block w-6 h-0.5 bg-white"></span>
+                </div>
+            </button>
+        </div>
+        <ul id="menu-mobile" class="absolute top-full left-0 w-full origin-top
+             transform scale-y-0 opacity-0
+             transition-all duration-200 ease-out
+             flex flex-col space-y-4
+             bg-blue-950 p-6
+             md:hidden">
             <li><a href="../index.html" class="hover:underline">Home</a></li>
             <li><a href="avisos.html" class="hover:underline">Avisos</a></li>
-            <li><a href="sobremi.html" class="hover:underline">Sobre mi</a></li>
+            <li><a href="sobremi.html" class="hover:underline">Sobre mí</a></li>
             <li><a href="materias2025.html" class="hover:underline">Materias 2025</a></li>
-            <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+            <li><a href="contacto.html" class="underline font-semibold">Contacto</a></li>
         </ul>
     </nav>
     <main class="flex-grow container mx-auto p-6 w-full max-w-5xl overflow-y-auto h-screen">
-        <h1 class="text-3xl font-bold mb-6">Contacto</h1>
-        <form action="#" method="post" class="space-y-4">
-            <div class="shadow-lg">
-                <label for="nombre" class="block mb-1">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" class="w-full border rounded px-3 py-2" />
+        <h1 class="text-3xl font-bold mb-8 text-center text-blue-950">Contacto</h1>
+        <form action="#" method="post" class="space-y-6">
+            <div>
+                <label for="nombre" class="block text-sm font-medium text-blue-950 mb-2">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 shadow-sm" />
             </div>
-            <div class="shadow-lg">
-                <label for="email" class="block mb-1">Correo electrónico:</label>
-                <input type="email" id="email" name="email" class="w-full border rounded px-3 py-2" />
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-blue-950 mb-2">Correo electrónico</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 shadow-sm" />
             </div>
-            <div class="shadow-lg">
-                <label for="asunto" class="block mb-1">Asunto:</label>
-                <input type="text" id="asunto" name="asunto" class="w-full border rounded px-3 py-2" />
+
+            <div>
+                <label for="asunto" class="block text-sm font-medium text-blue-950 mb-2">Asunto</label>
+                <input type="text" id="asunto" name="asunto" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 shadow-sm" />
             </div>
-            <div class="shadow-lg">
-                <label for="mensaje" class="block mb-1">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" class="w-full border rounded px-3 py-2 h-32"></textarea>
+
+            <div>
+                <label for="mensaje" class="block text-sm font-medium text-blue-950 mb-2">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring focus:border-blue-500 shadow-sm resize-none"></textarea>
             </div>
-            <button type="submit" class="bg-blue-950 text-white px-6 py-2 rounded hover:bg-gray-700">Enviar</button>
+
+            <div class="text-center">
+                <button type="submit"
+                    class="bg-blue-950 text-white px-8 py-2 rounded-lg hover:bg-blue-800 transition">Enviar</button>
+            </div>
         </form>
     </main>
-    <footer class="bg-blue-950 text-white p-4 text-center w-full">© 2025 Pedro Vazquez</footer>
+
+    <footer class="bg-blue-950 text-white p-4 text-center">
+        © 2025 Pedro Vazquez
+    </footer>
 </body>
 
 </html>
