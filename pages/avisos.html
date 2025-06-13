@@ -6,28 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Académico - Avisos</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config = { darkMode: 'class' };</script>
+    <script src="../utilidades/menu.js" defer></script>
+    <script src="../utilidades/darkmode.js" defer></script>
 </head>
 
-<body class="min-h-screen flex flex-col overflow-hidden h-screen font-sans-serif bg-orange-100">
+<body class="min-h-screen flex flex-col overflow-hidden h-screen font-sans-serif bg-orange-100 dark:bg-gray-900 dark:text-white">
     <nav class="bg-blue-950 text-white relative">
         <div class="container mx-auto flex items-center justify-between px-6 py-4">
             <a href="../index.html" class="flex items-center">
                 <img src="../fotos/uade.svg" class="w-24 filter brightness-0 invert" alt="Logo de UADE" />
             </a>
-            <ul class="hidden md:flex md:space-x-6">
-                <li><a href="../index.html" class="hover:underline">Home</a></li>
-                <li><a href="avisos.html" class="underline font-semibold">Avisos</a></li>
-                <li><a href="sobremi.html" class="hover:underline">Sobre mí</a></li>
-                <li><a href="materias2025.html" class="hover:underline">Materias 2025</a></li>
-                <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
-            </ul>
-            <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Abrir menú">
-                <div class="space-y-1">
-                    <span class="block w-6 h-0.5 bg-white"></span>
-                    <span class="block w-6 h-0.5 bg-white"></span>
-                    <span class="block w-6 h-0.5 bg-white"></span>
-                </div>
-            </button>
+            <div class="flex items-center space-x-4">
+                <ul class="hidden md:flex md:space-x-6 items-center">
+                    <li><a href="../index.html" class="hover:underline">Home</a></li>
+                    <li><a href="avisos.html" class="underline font-semibold">Avisos</a></li>
+                    <li><a href="sobremi.html" class="hover:underline">Sobre mí</a></li>
+                    <li><a href="materias2025.html" class="hover:underline">Materias 2025</a></li>
+                    <li><a href="contacto.html" class="hover:underline">Contacto</a></li>
+                </ul>
+                <button id="light-mode-btn" class="p-2 rounded hover:bg-blue-800" aria-label="Modo claro">🌞</button>
+                <button id="dark-mode-btn" class="p-2 rounded hover:bg-blue-800" aria-label="Modo oscuro">🌙</button>
+                <button id="menu-btn" class="md:hidden focus:outline-none" aria-label="Abrir menú">
+                    <div class="space-y-1">
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                        <span class="block w-6 h-0.5 bg-white"></span>
+                    </div>
+                </button>
+            </div>
         </div>
         <ul id="menu-mobile" class="absolute top-full left-0 w-full origin-top
              transform scale-y-0 opacity-0
