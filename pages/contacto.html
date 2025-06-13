@@ -7,6 +7,7 @@
     <title>Contacto - Mi Sitio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../utilidades/menu.js" defer></script>
+    <script src="../utilidades/formulario.js" defer></script>
 </head>
 
 <body class="min-h-screen flex flex-col overflow-hidden h-screen font-sans-serif bg-orange-100">
@@ -45,7 +46,7 @@
     </nav>
     <main class="flex-grow container mx-auto p-6 w-full max-w-5xl overflow-y-auto h-screen">
         <h1 class="text-3xl font-bold mb-8 text-center text-blue-950">Contacto</h1>
-        <form action="#" method="post" class="space-y-6">
+        <form id="contactForm" method="post" class="space-y-6">
             <div>
                 <label for="nombre" class="block text-sm font-medium text-blue-950 mb-2">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required
